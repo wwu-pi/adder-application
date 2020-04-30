@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Adder example</title>
+</head>
+
+<body>
+<main role="main">
+  <h1>Adder example</h1>
+
+  <div th:switch="${sum.number}">
+    <p th:case="10" th:text="'Sum: ' + ${sum.number}" />
+    <p th:case="42" th:text="'Sum: ' + ${sum.number}" />
+  </div>
+</main>
+</body>
+</html>

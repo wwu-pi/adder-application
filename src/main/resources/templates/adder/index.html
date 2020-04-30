@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>Adder example</title>
+</head>
+
+<body>
+<main role="main">
+  <h1>Adder example</h1>
+
+  <form method="POST" th:action="@{/sum}" th:object="${sumRequest}">
+    <input type="number" id="aPost" name="quantity" th:field="*{a.number}">
+    <input type="number" id="bPost" name="quantity" th:field="*{b.number}">
+
+    <input type="submit" value="Add with POST" />
+  </form>
+
+  <form method="GET" th:action="@{/sum}" th:object="${sumRequest}">
+    <input type="number" id="aGet" name="quantity" th:field="*{a.number}">
+    <input type="number" id="bGet" name="quantity" th:field="*{b.number}">
+
+    <input type="submit" value="Add with GET" />
+  </form>
+</main>
+</body>
+</html>
