@@ -1,0 +1,41 @@
+variables:
+  PROD_SERVER: prod-abc
+  TEST_SERVER: test-xyz
+
+stages:
+  - build
+  - test
+  - deploy
+
+default:
+  image: openjdk:8-jdk-slim
+  tags:
+    - mike
+
+build:
+  stage: build
+  script:
+    - ./mvnw package --batch-mode
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - target/*.jar
+
+test:
+  stage: test
+  script:
+    - ./mvnw test --batch-mode
+
+deploy-production:
+  stage: deploy
+  script:
+    - echo "push JAR to $PROD_SERVER server..."
+  only:
+    - production
+
+deploy-test:
+  stage: deploy
+  script:
+    - echo "push JAR to $TEST_SERVER server..."
+  only:
+    - master
