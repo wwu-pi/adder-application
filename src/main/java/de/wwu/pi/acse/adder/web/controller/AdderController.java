@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.websocket.server.PathParam;
 
 @Controller
-@RequestMapping("/test")
+@RequestMapping("/")
 public class AdderController {
   @Autowired
   AdderService adderService;
 
-  @GetMapping("/{abc}/create")
-  public String index(@PathVariable("abc") String myString, Model model) {
+  @GetMapping("/")
+  public String index(Model model) {
     model.addAttribute("sumRequest", new SumRequest());
     return "adder/index";
   }
