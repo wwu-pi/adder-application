@@ -1,7 +1,8 @@
 package de.wwu.pi.acse.adder.businesslogic;
 
-import de.wwu.pi.acse.adder.model.MyNumber;
 import org.springframework.stereotype.Service;
+
+import de.wwu.pi.acse.adder.model.MyNumber;
 
 @Service
 public class AdderServiceImpl implements AdderService {
