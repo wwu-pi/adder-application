@@ -8,7 +8,7 @@
 		<version>2.6.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>de.wwu.acse</groupId>
+	<groupId>de.wwu.pi.acse</groupId>
 	<artifactId>adder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>adder</name>
